@@ -1,0 +1,112 @@
+/* Box Model Hack */
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+
+:root {
+	--clr-primary: linear-gradient(hsl(249, 99%, 64%), hsl(278, 94%, 30%));
+	--clr-secondary: hsl(0, 100%, 66%);
+
+	--clr-neutral-900: hsl(278, 68%, 11%);
+	--clr-neutral-600: hsl(279, 6%, 55%);
+	--clr-neutral-300: hsl(270, 3%, 87%);
+	--clr-neutral-100: hsl(0, 0%, 100%);
+
+	--ff-accent: "Abyssinica SIL", serif;
+	--fw-regular: 500;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+* {
+	margin: 0;
+}
+html,
+body {
+	height: 100%;
+}
+body {
+	line-height: 1.5;
+	-webkit-font-smoothing: antialiased;
+}
+img,
+picture,
+video,
+canvas,
+svg {
+	display: block;
+	max-width: 100%;
+}
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	overflow-wrap: break-word;
+}
+#root,
+#__next {
+	isolation: isolate;
+}
+
+.attribution {
+	font-size: 11px;
+	text-align: center;
+}
+
+.attribution a {
+	color: hsl(228, 45%, 44%);
+}
+
+@media screen and (max-width: 375px) {
+	.side-pane {
+		height: 33vh;
+		width: 100%;
+		background-image: url("./images/bg-main-mobile.png");
+		color: var(--clr-neutral-100);
+	}
+
+	.card-back {
+		float: right;
+		width: 80vw;
+		height: 70%;
+		margin: 5% 10px 10px 15%;
+		background-image: url("./images/bg-card-back.png");
+		background-size: contain;
+		background-repeat: no-repeat;
+		text-align: right;
+	}
+
+	#display-CVC {
+		display: inline-block;
+		margin: 22% 15%;
+	}
+	.card-front {
+		width: 80vw;
+		height: 70%;
+		margin: 5% 10px 10px 15%;
+		background-image: url("./images/bg-card-front.png");
+		background-size: contain;
+		background-repeat: no-repeat;
+		text-align: right;
+		float: inline-end;
+		z-index: auto;
+	}
+
+	#display-CVC {
+		display: inline-block;
+		margin: 22% 15%;
+	}
+}
