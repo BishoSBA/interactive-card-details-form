@@ -70,19 +70,28 @@ h6 {
 	color: hsl(228, 45%, 44%);
 }
 
+body {
+	background-color: var(--clr-neutral-300);
+	font-family: var(--ff-accent);
+}
+
 @media screen and (max-width: 375px) {
 	.side-pane {
 		height: 33vh;
 		width: 100%;
 		background-image: url("./images/bg-main-mobile.png");
 		color: var(--clr-neutral-100);
+		position: relative;
+		margin-bottom: 20%;
 	}
 
 	.card-back {
 		float: right;
-		width: 80vw;
+		width: 82vw;
 		height: 70%;
-		margin: 5% 10px 10px 15%;
+		position: absolute;
+		top: 10%;
+		right: 10px;
 		background-image: url("./images/bg-card-back.png");
 		background-size: contain;
 		background-repeat: no-repeat;
@@ -94,19 +103,47 @@ h6 {
 		margin: 22% 15%;
 	}
 	.card-front {
-		width: 80vw;
+		width: 82vw;
 		height: 70%;
-		margin: 5% 10px 10px 15%;
+		position: absolute;
+		top: 50%;
+		left: 15px;
 		background-image: url("./images/bg-card-front.png");
 		background-size: contain;
 		background-repeat: no-repeat;
 		text-align: right;
 		float: inline-end;
-		z-index: auto;
+		z-index: 99;
 	}
 
 	#display-CVC {
 		display: inline-block;
 		margin: 22% 15%;
+	}
+
+	#display-number {
+		position: absolute;
+		top: 40%;
+		left: 3%;
+		font-size: 1.5rem;
+	}
+
+	#display-name {
+		position: absolute;
+		bottom: 18%;
+		left: 9%;
+		font-size: 0.8rem;
+	}
+
+	#display-date {
+		position: absolute;
+		bottom: 18%;
+		right: 9%;
+		font-size: 0.8rem;
+	}
+
+	#display-logo {
+		width: 45px;
+		margin: 15px;
 	}
 }
