@@ -13,8 +13,10 @@
 	--clr-neutral-300: hsl(270, 3%, 87%);
 	--clr-neutral-100: hsl(0, 0%, 100%);
 
-	--ff-accent: "Abyssinica SIL", serif;
+	--ff-accent: "Space Grotesk", serif;
+
 	--fw-regular: 500;
+	--fw-light: 400;
 }
 
 *,
@@ -28,6 +30,7 @@
 html,
 body {
 	height: 100%;
+	width: 100%;
 }
 body {
 	line-height: 1.5;
@@ -73,77 +76,123 @@ h6 {
 body {
 	background-color: var(--clr-neutral-300);
 	font-family: var(--ff-accent);
+	font-weight: var(--fw-regular);
+	font-size: 18px;
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 640px) {
 	.side-pane {
-		height: 33vh;
+		height: 250px;
 		width: 100%;
 		background-image: url("./images/bg-main-mobile.png");
+		background-size: cover;
 		color: var(--clr-neutral-100);
-		position: relative;
+		display: grid;
 		margin-bottom: 20%;
+		justify-content: center;
+		align-items: center;
+		font-weight: var(--fw-light);
 	}
 
 	.card-back {
-		float: right;
-		width: 82vw;
-		height: 70%;
-		position: absolute;
-		top: 10%;
-		right: 10px;
+		width: 80vw;
+		max-width: 280px;
+		height: 150px;
+		transform: translate(10%, 20%);
 		background-image: url("./images/bg-card-back.png");
 		background-size: contain;
 		background-repeat: no-repeat;
+		font-size: 0.7rem;
 		text-align: right;
 	}
 
-	#display-CVC {
-		display: inline-block;
-		margin: 22% 15%;
-	}
 	.card-front {
-		width: 82vw;
-		height: 70%;
-		position: absolute;
-		top: 50%;
-		left: 15px;
+		width: 80vw;
+		max-width: 280px;
+		height: 150px;
+		transform: translate(-10%, -10%);
 		background-image: url("./images/bg-card-front.png");
 		background-size: contain;
 		background-repeat: no-repeat;
 		text-align: right;
-		float: inline-end;
 		z-index: 99;
 	}
 
 	#display-CVC {
 		display: inline-block;
-		margin: 22% 15%;
+		margin: 23.5% 14%;
 	}
 
 	#display-number {
 		position: absolute;
-		top: 40%;
-		left: 3%;
-		font-size: 1.5rem;
+		top: 48%;
+		left: 20px;
+		font-size: 1.3rem;
 	}
 
 	#display-name {
 		position: absolute;
-		bottom: 18%;
-		left: 9%;
-		font-size: 0.8rem;
+		bottom: 12%;
+		left: 5%;
+		font-size: 0.7rem;
 	}
 
 	#display-date {
 		position: absolute;
-		bottom: 18%;
-		right: 9%;
-		font-size: 0.8rem;
+		bottom: 12%;
+		left: 75%;
+		font-size: 0.7rem;
 	}
 
 	#display-logo {
 		width: 45px;
 		margin: 15px;
+	}
+
+	form {
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+		padding: 0px 8%;
+	}
+
+	.expiry-date-group {
+		display: flex;
+		gap: 3%;
+	}
+
+	.date-input {
+		display: flex;
+		flex-direction: row;
+		/* flex-wrap: nowrap; */
+		gap: 5%;
+	}
+
+	.date-input > input {
+		width: 50%;
+	}
+
+	.input-half {
+		width: 50%;
+	}
+
+	.input {
+		display: flex;
+		flex-direction: column;
+	}
+
+	input {
+		padding: 0.2rem 0.5rem;
+		border: 2px solid hsl(279, 6%, 55%, 0.3);
+		border-radius: 5px;
+		background-color: var(--clr-neutral-300);
+	}
+
+	.button {
+		padding: 5px 20px;
+		border: 0cm solid;
+		border-radius: 5px;
+		background-color: black;
+		color: var(--clr-neutral-100);
 	}
 }
