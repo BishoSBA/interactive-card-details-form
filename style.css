@@ -80,25 +80,135 @@ body {
 	font-size: 18px;
 }
 
-@media screen and (max-width: 640px) {
-	.side-pane {
-		height: 250px;
-		width: 100%;
-		background-image: url("./images/bg-main-mobile.png");
-		background-size: cover;
-		color: var(--clr-neutral-100);
-		display: grid;
-		margin-bottom: 20%;
-		justify-content: center;
-		align-items: center;
-		font-weight: var(--fw-light);
+.side-pane {
+	height: 250px;
+	width: 100%;
+	background-image: url("./images/bg-main-mobile.png");
+	background-size: cover;
+	color: var(--clr-neutral-100);
+	display: grid;
+	margin-bottom: 20%;
+	justify-content: center;
+	align-items: center;
+	font-weight: var(--fw-light);
+}
+
+.card-back {
+	width: 80vw;
+	max-width: 280px;
+	height: 150px;
+	transform: translate(10%, 20%);
+	background-image: url("./images/bg-card-back.png");
+	background-size: contain;
+	background-repeat: no-repeat;
+	font-size: 0.7rem;
+	text-align: right;
+}
+
+.card-front {
+	width: 80vw;
+	max-width: 280px;
+	height: 150px;
+	transform: translate(-10%, -10%);
+	background-image: url("./images/bg-card-front.png");
+	background-size: contain;
+	background-repeat: no-repeat;
+	text-align: right;
+	z-index: 99;
+}
+
+#display-CVC {
+	display: inline-block;
+	margin: 23.5% 14%;
+}
+
+#display-number {
+	position: absolute;
+	top: 48%;
+	left: 20px;
+	font-size: 1.3rem;
+}
+
+#display-name {
+	position: absolute;
+	bottom: 12%;
+	left: 5%;
+	font-size: 0.7rem;
+}
+
+#display-date {
+	position: absolute;
+	bottom: 12%;
+	left: 75%;
+	font-size: 0.7rem;
+}
+
+#display-logo {
+	width: 45px;
+	margin: 15px;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+	padding: 0px 8%;
+}
+
+.expiry-date-group {
+	display: flex;
+	justify-content: space-between;
+	gap: 1%;
+}
+
+.date-input {
+	display: flex;
+	flex-direction: row;
+	/* flex-wrap: nowrap; */
+	gap: 5%;
+}
+
+.date-input > input {
+	width: 45%;
+}
+
+.input-half {
+	width: 48%;
+}
+
+.input {
+	display: flex;
+	flex-direction: column;
+}
+
+input {
+	padding: 0.2rem 0.5rem;
+	border: 2px solid hsl(279, 6%, 55%, 0.3);
+	border-radius: 5px;
+	background-color: var(--clr-neutral-300);
+}
+
+.button {
+	padding: 5px 20px;
+	border: 0cm solid;
+	border-radius: 5px;
+	background-color: var(--clr-neutral-900);
+	color: var(--clr-neutral-100);
+}
+
+@media screen and (min-width: 640px) {
+	main {
+		display: flex;
 	}
 
+	.side-pane {
+		display: fixed;
+		width: 35vw;
+		height: 105vh;
+		margin: 0;
+	}
 	.card-back {
-		width: 80vw;
-		max-width: 280px;
-		height: 150px;
-		transform: translate(10%, 20%);
+		transform: translate(50%, 180%);
 		background-image: url("./images/bg-card-back.png");
 		background-size: contain;
 		background-repeat: no-repeat;
@@ -110,7 +220,7 @@ body {
 		width: 80vw;
 		max-width: 280px;
 		height: 150px;
-		transform: translate(-10%, -10%);
+		transform: translate(30%, -180%);
 		background-image: url("./images/bg-card-front.png");
 		background-size: contain;
 		background-repeat: no-repeat;
@@ -118,81 +228,15 @@ body {
 		z-index: 99;
 	}
 
-	#display-CVC {
-		display: inline-block;
-		margin: 23.5% 14%;
+	.container {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		width: 65vw;
 	}
-
-	#display-number {
-		position: absolute;
-		top: 48%;
-		left: 20px;
-		font-size: 1.3rem;
-	}
-
-	#display-name {
-		position: absolute;
-		bottom: 12%;
-		left: 5%;
-		font-size: 0.7rem;
-	}
-
-	#display-date {
-		position: absolute;
-		bottom: 12%;
-		left: 75%;
-		font-size: 0.7rem;
-	}
-
-	#display-logo {
-		width: 45px;
-		margin: 15px;
-	}
-
 	form {
-		display: flex;
-		flex-direction: column;
-		gap: 1.5rem;
-		padding: 0px 8%;
-	}
-
-	.expiry-date-group {
-		display: flex;
-		gap: 3%;
-	}
-
-	.date-input {
-		display: flex;
-		flex-direction: row;
-		/* flex-wrap: nowrap; */
-		gap: 5%;
-	}
-
-	.date-input > input {
-		width: 50%;
-	}
-
-	.input-half {
-		width: 50%;
-	}
-
-	.input {
-		display: flex;
-		flex-direction: column;
-	}
-
-	input {
-		padding: 0.2rem 0.5rem;
-		border: 2px solid hsl(279, 6%, 55%, 0.3);
-		border-radius: 5px;
-		background-color: var(--clr-neutral-300);
-	}
-
-	.button {
-		padding: 5px 20px;
-		border: 0cm solid;
-		border-radius: 5px;
-		background-color: var(--clr-neutral-900);
-		color: var(--clr-neutral-100);
+		width: 70%;
+		max-width: 600px;
 	}
 }
