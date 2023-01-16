@@ -13,7 +13,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Abyssinica+SIL&family=Space+Grotesk:wght@400;500&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
   <title>Frontend Mentor | Interactive card details form</title>
 </head>
 
@@ -27,7 +27,10 @@
         <img id="display-logo" src="./images/card-logo.svg" alt="logo" srcset="">
         <span id="display-number">0000 0000 0000 0000</span>
         <span id="display-name">Jane Appleseed</span>
-        <span id="display-date">00/00</span>
+        <span id="display-date">
+          <span id="display-month">00</span> /
+          <span id="display-year">00</span></span>
+
       </div>
 
     </div>
@@ -41,15 +44,16 @@
 
         <div class="input">
           <label for="card-number">Card Number</label>
-          <input type="text" id="card-number" placeholder="e.g. 1234 5678 9123 0000"></input>
+          <input type="number" id="card-number" placeholder="e.g. 1234 5678 9123 0000" max="10000000000000"
+            required></input>
         </div>
 
         <div class="expiry-date-group">
           <div class="input input-half">
             <label for="Number">Exp. Date (MM/YY)</label>
             <div class="date-input">
-              <input type="number" id="month" placeholder="MM"></input>
-              <input type="number" id="year" placeholder="YY"></input>
+              <input type="number" id="month" placeholder="MM" min="0" max="99"></input>
+              <input type="number" id="year" placeholder="YY" min="0" max="99"></input>
             </div>
           </div>
           <div class="input input-half">
