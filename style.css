@@ -65,6 +65,8 @@ h6 {
 }
 
 .attribution {
+	position: fixed;
+	bottom: 10px;
 	font-size: 11px;
 	text-align: center;
 }
@@ -87,7 +89,7 @@ body {
 	background-size: cover;
 	color: var(--clr-neutral-100);
 	display: grid;
-	margin-bottom: 20%;
+	margin-bottom: 5rem;
 	justify-content: center;
 	align-items: center;
 	font-weight: var(--fw-light);
@@ -196,6 +198,28 @@ input {
 	color: var(--clr-neutral-100);
 }
 
+.completed {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	gap: 1rem;
+}
+
+.completed-image {
+	max-width: 5rem;
+}
+
+.completed > button {
+	width: 90%;
+	max-width: 20rem;
+}
+
+.container {
+	display: flex;
+	justify-content: center;
+}
+
 @media screen and (min-width: 700px) {
 	main {
 		display: flex;
@@ -239,4 +263,8 @@ input {
 		width: 80%;
 		max-width: 600px;
 	}
+}
+
+.hidden {
+	display: none;
 }

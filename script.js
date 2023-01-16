@@ -10,6 +10,10 @@ const inputMonth = document.getElementById("month");
 const inputYear = document.getElementById("year");
 const inputCVC = document.getElementById("CVC");
 
+const form = document.getElementById("form");
+const completedState = document.getElementById("completed");
+const continueButton = document.getElementById("continue-button");
+
 inputName.addEventListener("input", () => {
 	const inputValue = inputName.value;
 	displayName.innerHTML = inputValue;
@@ -38,14 +42,24 @@ inputCVC.addEventListener("input", () => {
 const formatCardNumber = (value) => {
 	if (value.length > 16) value = value.slice(0, 16);
 	const regex = /^(\d{0,4})(\d{0,4})(\d{0,4})(\d{0,4})$/g;
-	const onlyNumbers = value.replace(/[^\d]/g, "");
 
-	return onlyNumbers.replace(regex, (regex, $1, $2, $3, $4) =>
+	return value.replace(regex, (regex, $1, $2, $3, $4) =>
 		[$1, $2, $3, $4].filter((group) => !!group).join(" ")
 	);
 };
 
 const formatLength = (value, length) => {
 	if (value.length > length) value = value.slice(0, length);
-	return value;
+	return value.replace(/[^\d]/g, "");
 };
+
+form.addEventListener("submit", (e) => {
+	e.preventDefault();
+	form.classList.add("hidden");
+	completedState.classList.remove("hidden");
+});
+
+continueButton.addEventListener("click", () => {
+	form.classList.remove("hidden");
+	completedState.classList.add("hidden");
+});
