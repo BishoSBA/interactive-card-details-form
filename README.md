@@ -32,8 +32,8 @@ Users should be able to:
 
 ### Links
 
--   Solution URL: [](https://github.com/BishoSBA/interactive-card-details-form)
--   Live Site URL: [](https://bishosba.github.io/interactive-card-details-form/)
+-   [Solution URL](https://github.com/BishoSBA/interactive-card-details-form)
+-   [Live Site URL](https://bishosba.github.io/interactive-card-details-form/)
 
 ## My process
 
